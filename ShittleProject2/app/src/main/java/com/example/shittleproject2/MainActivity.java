@@ -1,4 +1,4 @@
-package com.subustar;
+package com.example.shittleproject2;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.shittleproject2.R;
+
 public class MainActivity extends AppCompatActivity {
     MSSQLhandler mssqLhandler;
-    String ip = "1.168.0.53";
+    String ip = "1.168.0.53:60000";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,5 +30,5 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, Student.class);
 
         startActivity(i);
-}
+    }
 }
