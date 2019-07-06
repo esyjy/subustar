@@ -2,7 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.subustar">
     <uses-permission android:name="android.permission.NFC"/>
+<<<<<<< HEAD
+
+=======
     <uses-permission android:name="android.permission.INTERNET"/>
+>>>>>>> a8843813f87e987400bd9ff00f24e64d4056169c
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
