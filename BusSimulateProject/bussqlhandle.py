@@ -1,7 +1,8 @@
 import pymssql
 
 # Starting the connection for server
-def start_server(_server, _user, _password, _database) :
+def start_server(_server='1.168.0.53:60000', _user='cit',
+                 _password='citcitcit', _database='subustar') :
     while True :
         try:
             conn = pymssql.connect(server = _server, user  = _user, password = _password, database = _database)
@@ -9,28 +10,34 @@ def start_server(_server, _user, _password, _database) :
         except Exception  as e :
             print(e)
             pass
-conn = start_server('1.168.0.53:60000', 'cit', 'citcitcit', 'subustar')
 
+def init_table(conn, cursor, tablename):
+    query='drop table if exists '+tablename
+    if tablename == "speed_table":
+        query += '''
+        create table speed_table(
+          speed int not null,
+          time datetime primary key,
+          people int not null
+        );
+        '''
+    elif tablename == "student_table":
+        query += '''
+        create table student_table(
+            id nvarchar(50) primary key,
+            pw nvarchar(50) not null,
+            attendance nvarchar(50) not null,
+            name nvarchar(20) not null
+        );
+        '''
+    cursor.execute(query)
+    conn.commit()
+    return
 
-query = '''
-drop table if exists speed_table;
-
-create table speed_table(
-  speed int not null,
-  time datetime primary key
-);
-insert into speed_table
-values
-(0, '2019-06-15 12:03:30')
 '''
-
-cursor = conn.cursor()
-cursor.execute(query)
-conn.commit()
-
 query = "select * from speed_table"
 cursor.execute(query)
 row = cursor.fetchone()
 print(row)
-
 conn.close()
+'''
