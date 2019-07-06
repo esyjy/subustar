@@ -22,6 +22,7 @@ speed = 1
 peoplenum = 0
 
 speedtext = canvas.create_text(400, 100, text = 'speed : ' + str(speed), font = ('consolas', 30))
+peopletext = canvas.create_text(400, 150, text = 'people :' + str(peoplenum), font =('consolas', 30))
 
 def setspeed(number) :
            global speed
@@ -46,10 +47,12 @@ def speed_down(event) :
                 setspeed(speed-1)
 
 def people():
-        global people
-        people += 1
+        global peoplenum
+        peoplenum += 1
+        canvas.itemconfig(peopletext, text = 'people : ' + str(peoplenum))
            
 canvas.bind_all('<KeyPress-Up>', speed_up)
 canvas.bind_all('<KeyPress-Down>', speed_down)
+canvas.bind_all('<KeyPress-P>', people)
 
 screen.mainloop()
