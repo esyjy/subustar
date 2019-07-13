@@ -1,5 +1,6 @@
 from tkinter import Tk, Canvas
 from bussqlhandle import start_server, init_table
+import time
 
 def setspeed(number) :
     global speed
@@ -19,16 +20,42 @@ def run() :
 def speed_up(event) :
     global speed
     setspeed(round(speed+0.1,1))
+    canvas.itemconfig(bus_body, fill="green")
 
 def speed_down(event) :
     global speed
     if speed > 0:
         setspeed(round(speed-0.1,1))
+        canvas.itemconfig(bus_body, fill="green")
 
 def people(event):
     global peoplenum
-    peoplenum += 1
-    canvas.itemconfig(peopletext, text = 'people : ' + str(peoplenum))
+    if speed == 0:
+        peoplenum += 1
+        canvas.itemconfig(peopletext, text = 'people : ' + str(peoplenum))
+        canvas.itemconfig(bus_body, fill="red")
+
+def people2(event):
+    global peoplenum
+    if speed == 0 and peoplenum > 0:
+        peoplenum -= 1
+        canvas.itemconfig(peopletext, text = 'people : ' + str(peoplenum))
+        canvas.itemconfig(bus_body, fill = "blue")
+
+def break_(event):
+    global speed
+    setspeed(round(0))
+
+def gettime():
+    t = time.localtime()
+    text = str(t.tm_year) + "-" + str(t.tm_mon) + "-" + str(t.tm_mday) + " "
+    text += str(t.tm_hour) + ":" + str(t.tm_min) + ":" + str(t.tm_sec)
+    return text
+
+def changetime():
+    global timetext
+    canvas.itemconfig(timetext, text = str(gettime()))
+    screen.after(1000, changetime)
 
 screen = Tk()
 screen.title('bus simulator')
@@ -53,10 +80,15 @@ speedtext = canvas.create_text(400, 100,
                                text = 'speed : ' + str(speed), font = ('consolas', 30))
 peopletext = canvas.create_text(400, 150,
                                 text = 'people :' + str(peoplenum), font =('consolas', 30))
+t = time.localtime()
+timetext = canvas.create_text(400, 50,
+                              text = gettime() , font =('consolas', 30))
 
 canvas.bind_all('<KeyPress-Up>', speed_up)
 canvas.bind_all('<KeyPress-Down>', speed_down)
+canvas.bind_all('<KeyPress-space>', break_)
 canvas.bind_all('<KeyPress-p>', people)
+canvas.bind_all('<KeyPress-m>', people2)
 
 if __name__ == "__main__" :
     run()
@@ -64,4 +96,5 @@ if __name__ == "__main__" :
     conn = start_server()
     cursor = conn.cursor()
     init_table(conn,cursor,"speed_table")
+    changetime()
     screen.mainloop()
