@@ -12,12 +12,13 @@ def start_server(_server='1.168.0.53:60000', _user='cit',
             print(e)
             pass
 
-def init_table(conn, cursor, tablename):
+def init_table(conn, tablename):
+    cursor = conn.cursor()
     query='drop table if exists '+tablename
     if tablename == "speed_table":
         query += '''
         create table speed_table(
-          speed int not null,
+          speed float not null,
           time datetime primary key,
           people int not null
         );

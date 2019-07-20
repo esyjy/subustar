@@ -1,6 +1,7 @@
 from tkinter import Tk, Canvas
-from bussqlhandle import start_server, init_table
+from bussqlhandle import start_server, init_table, insert
 import time
+import datetime
 
 def setspeed(number) :
     global speed
@@ -47,15 +48,16 @@ def break_(event):
     setspeed(round(0))
 
 def gettime():
-    t = time.localtime()
-    text = str(t.tm_year) + "-" + str(t.tm_mon) + "-" + str(t.tm_mday) + " "
-    text += str(t.tm_hour) + ":" + str(t.tm_min) + ":" + str(t.tm_sec)
-    return text
+    return str(datetime.datetime.now())[:-3]
 
 def changetime():
     global timetext
-    canvas.itemconfig(timetext, text = str(gettime()))
-    screen.after(1000, changetime)
+    canvas.itemconfig(timetext, text = gettime())
+    screen.after(50, changetime)
+
+def savevalue(event):
+    global speed, peoplenum, conn
+    insert(conn, "speed_table", [str(speed), "'"+gettime()+"'", str(peoplenum)])
 
 screen = Tk()
 screen.title('bus simulator')
@@ -79,7 +81,7 @@ bus_tire = canvas.create_oval(480, 350, 580, 450, fill = 'black')
 speedtext = canvas.create_text(400, 100,
                                text = 'speed : ' + str(speed), font = ('consolas', 30))
 peopletext = canvas.create_text(400, 150,
-                                text = 'people :' + str(peoplenum), font =('consolas', 30))
+                                text = 'people : ' + str(peoplenum), font =('consolas', 30))
 t = time.localtime()
 timetext = canvas.create_text(400, 50,
                               text = gettime() , font =('consolas', 30))
@@ -89,12 +91,11 @@ canvas.bind_all('<KeyPress-Down>', speed_down)
 canvas.bind_all('<KeyPress-space>', break_)
 canvas.bind_all('<KeyPress-p>', people)
 canvas.bind_all('<KeyPress-m>', people2)
+canvas.bind_all('<KeyPress-s>', savevalue)
 
 if __name__ == "__main__" :
     run()
-    start_server()
     conn = start_server()
-    cursor = conn.cursor()
-    init_table(conn,cursor,"speed_table")
+    init_table(conn,"speed_table")
     changetime()
     screen.mainloop()
