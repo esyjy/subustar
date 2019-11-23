@@ -2,8 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50e4db6e-8b77-42e5-95e2-a99bcf5ea96d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusSimulateProject/bus.py" beforeDir="false" afterPath="$PROJECT_DIR$/BusSimulateProject/bus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/libs/jtds-1.2.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/androidTest/java/com/example/shittleproject2/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/java/com/example/shittleproject2/MSSQLhandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/java/com/example/shittleproject2/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/java/com/example/shittleproject2/Manager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/java/com/example/shittleproject2/PillowNFCWriteException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/java/com/example/shittleproject2/PillowNFCWriteHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/java/com/example/shittleproject2/PillowNfcManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/java/com/example/shittleproject2/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/layout/dialog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/layout/manager.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/layout/student.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/app/src/test/java/com/example/shittleproject2/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShittleProject2/settings.gradle" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,17 +56,24 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/subustar$bussqlhandle.coverage" NAME="bussqlhandle Coverage Results" MODIFIED="1562381676469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/BusSimulateProject" />
-    <SUITE FILE_PATH="coverage/subustar$bus.coverage" NAME="bus Coverage Results" MODIFIED="1562383125471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1422356260">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BusSimulateProject/bussqlhandle.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+            <state relative-caret-position="125">
+              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -50,10 +102,11 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -71,12 +124,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ShuttleProject" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -101,7 +153,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.bus">
+  <component name="RunManager" selected="Unknown.bus711649671">
     <configuration name="bus" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="subustar" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -146,24 +198,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.bus" />
-        <item itemvalue="Python.bussqlhandle" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="50e4db6e-8b77-42e5-95e2-a99bcf5ea96d" name="Default Changelist" comment="" />
+      <created>1574478649761</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574478649761</updated>
+    </task>
+    <servers />
+  </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15704697" />
+      <window_info id="Image Layers" />
+      <window_info id="Capture Tool" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1590604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
@@ -174,6 +234,9 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Android WiFi ADB" />
+      <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -186,21 +249,21 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/BusSimulateProject/bus.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="724">
           <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BusSimulateProject/bussqlhandle.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+        <state relative-caret-position="125">
+          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
         </state>
       </provider>
     </entry>
