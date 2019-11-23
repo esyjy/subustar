@@ -1,4 +1,4 @@
-package com.subustar;
+package com.example.subusstar;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.subustar", appContext.getPackageName());
+        assertEquals("com.example.subusstar", appContext.getPackageName());
     }
 }

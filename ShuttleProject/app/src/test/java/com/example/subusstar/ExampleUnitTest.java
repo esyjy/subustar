@@ -1,4 +1,4 @@
-package com.subustar;
+package com.example.subusstar;
 
 import org.junit.Test;
 
