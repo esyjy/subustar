@@ -1,0 +1,35 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
+public class man {
+    public static Connection connect(String ipp) {
+        String classs = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        /* db : databse, username, password, conn : connection */
+        String db = "subustar";
+        String username = "cit";
+        String password = "citcitcit";
+        Connection conn = null;
+
+        // connURL : 서버 접속시 필요한 ip주소, db 이름, 사용자 이름, 비밀번호
+        String ConnURL = "jdbc:sqlserver://" + ipp + ";" +
+                "databaseName=" + db + ";user=" + username +
+                ";password=" + password + ";loginTimeout=1";
+        try {
+            Class.forName(classs);
+            DriverManager.setLoginTimeout(1);
+            // 연결을 한다
+            conn = DriverManager.getConnection(ConnURL);
+            System.out.println("연결 성공!");
+        } catch (Exception e) {
+            System.out.println("MSSQLhandler % connect " + e.getMessage() + " Exception");
+        }
+        return conn;
+    }
+
+    public static void main(String[] args) {
+        String server = "1.168.0.53:60000";
+        Connection conn = connect(server);
+    }
+}
