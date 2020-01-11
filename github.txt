@@ -1,35 +1,93 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
-
-public class man {
+public class í•¸ë“¤ëŸ¬ {
     public static Connection connect(String ipp) {
         String classs = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         /* db : databse, username, password, conn : connection */
-        String db = "subustar";
+        String db = "jundb";
         String username = "cit";
         String password = "citcitcit";
         Connection conn = null;
 
-        // connURL : ¼­¹ö Á¢¼Ó½Ã ÇÊ¿äÇÑ ipÁÖ¼Ò, db ÀÌ¸§, »ç¿ëÀÚ ÀÌ¸§, ºñ¹Ğ¹øÈ£
+        // connURL : ì„œë²„ ì ‘ì†ì‹œ í•„ìš”í•œ ipì£¼ì†Œ, db ì´ë¦„, ì‚¬ìš©ì ì´ë¦„, ë¹„ë°€ë²ˆí˜¸
         String ConnURL = "jdbc:sqlserver://" + ipp + ";" +
-                "databaseName=" + db + ";user=" + username +
-                ";password=" + password + ";loginTimeout=1";
+                "databaseName=" + db + ";";
         try {
             Class.forName(classs);
             DriverManager.setLoginTimeout(1);
-            // ¿¬°áÀ» ÇÑ´Ù
-            conn = DriverManager.getConnection(ConnURL);
-            System.out.println("¿¬°á ¼º°ø!");
-        } catch (Exception e) {
+            // ì—°ê²°ì„ í•œë‹¤
+            conn = DriverManager.getConnection(ConnURL, username, password);
+            System.out.println("ì—°ê²° ì„±ê³µ!");
+        } catch (SQLException sqle) {
+            System.out.println("SQLException : " + sqle);
+        } catch (ClassNotFoundException cnfe) {
+            System.out.println("ClassNotFoundException : " + cnfe);
+        }
+
+        catch (Exception e) {
             System.out.println("MSSQLhandler % connect " + e.getMessage() + " Exception");
         }
         return conn;
     }
 
+    //cruid
+    // create
+    // read
+    // update
+    // insert
+    // delete
+
+    public static void drop(Connection conn, String tablename) {
+        String query = "drop table " + tablename;
+        try {
+            Statement statement = conn.createStatement();
+            statement.execute(query);
+            System.out.println("í…Œì´ë¸” ì‚­ì œ ì„±ê³µ : " + tablename);
+        }
+        catch (SQLException sqle) {
+            System.out.println(sqle);
+        }
+    }
+
+    public static void create(Connection conn, String tablename, String[] cnames, String[] dtypes, String[] consts) {
+        String query = "";
+        for(int i=0; i<cnames.length; i++) {
+            if(i == 0) {
+                query += "CREATE TABLE " + tablename + " (";
+            }
+            query += cnames[i] + " " + dtypes[i] + " " + consts[i];
+            if(i == cnames.length-1) {
+                query += ")";
+            }
+            else {
+                query += ", ";
+            }
+        }
+        System.out.println(query);
+
+        try {
+            Statement statement = conn.createStatement();
+            statement.execute(query);
+            System.out.println("í…Œì´ë¸” ìƒì„± ì„±ê³µ : " + tablename);
+        }
+        catch (SQLException sqle) {
+            System.out.println(sqle);
+        }
+    }
+
     public static void main(String[] args) {
         String server = "1.168.0.53:60000";
         Connection conn = connect(server);
+
+        String tablename = "tn_aphelios_builds";
+        String cnames[] = {"core_builds", "pick_rates", "win_rates"};
+        String dtypes[] = {"NVARCHAR(255)", "FLOAT", "FLOAT"};
+        String consts[] = {"PRIMARY KEY", "NOT NULL", "NOT NULL"};
+
+        create(conn, tablename, cnames, dtypes, consts);
+        drop(conn, tablename);
     }
 }
