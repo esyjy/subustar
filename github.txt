@@ -1,13 +1,10 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
-public class 핸들러 {
+public class man {
     public static Connection connect(String ipp) {
         String classs = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         /* db : databse, username, password, conn : connection */
-        String db = "jundb";
+        String db = "testdb";
         String username = "cit";
         String password = "citcitcit";
         Connection conn = null;
@@ -52,6 +49,48 @@ public class 핸들러 {
         }
     }
 
+    public static void read(Connection conn, String tablename, String where) {
+        String query = "select * from " + tablename + where;
+        ResultSet rs;
+        try {
+            Statement statement = conn.createStatement();
+            rs = statement.executeQuery(query);
+            while (rs.next()) {
+                System.out.print(rs.getString(1) + " ");
+                System.out.print(rs.getInt(2) + " ");
+                System.out.print(rs.getInt(3) + " ");
+                System.out.println(rs.getString(4) + " ");
+            }
+        }
+        catch (SQLException sqle) {
+            System.out.println(sqle);
+        }
+    }
+
+    public static void update(Connection conn, String tablename, String column, String value, String where) {
+        String query = "update " + tablename + " set " + column + " = " + value + where;
+        try {
+            Statement statement = conn.createStatement();
+            statement.execute(query);
+            System.out.println("테이블 업데이트 성공 : " + tablename);
+        }
+        catch (SQLException sqle) {
+            System.out.println(sqle);
+        }
+    }
+
+    public static void insert(Connection conn, String tablename, String values) {
+        String query = "insert into " + tablename + " values (" + values + ")";
+        try {
+            Statement statement = conn.createStatement();
+            statement.execute(query);
+            System.out.println("테이블 값 추가 성공 : " + tablename);
+        }
+        catch (SQLException sqle) {
+            System.out.println(sqle);
+        }
+    }
+
     public static void create(Connection conn, String tablename, String[] cnames, String[] dtypes, String[] consts) {
         String query = "";
         for(int i=0; i<cnames.length; i++) {
@@ -64,7 +103,7 @@ public class 핸들러 {
             }
             else {
                 query += ", ";
-            }
+        }
         }
         System.out.println(query);
 
@@ -82,12 +121,14 @@ public class 핸들러 {
         String server = "1.168.0.53:60000";
         Connection conn = connect(server);
 
-        String tablename = "tn_aphelios_builds";
+        String tablename = "testtable";
         String cnames[] = {"core_builds", "pick_rates", "win_rates"};
         String dtypes[] = {"NVARCHAR(255)", "FLOAT", "FLOAT"};
         String consts[] = {"PRIMARY KEY", "NOT NULL", "NOT NULL"};
 
-        create(conn, tablename, cnames, dtypes, consts);
-        drop(conn, tablename);
+
+        read(conn, tablename, "");
+        update(conn, tablename, "Users", "'Fake'", " where Users = 'Faker'");
+        insert(conn, tablename, "'Doinb', 90, 7, 'challenger'");
     }
 }
