@@ -5,25 +5,25 @@ public class SQLHandler {
     Connection conn;
 
     public SQLHandler(String db, String un, String pw, String ip, String port) {
-        String classs = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+        this.classs = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         /* db : databse, username, password, conn : connection */
         this.db = db;
-        this.username = username;
-        this.password = password;
+        this.username = un;
+        this.password = pw;
         this.ip = ip;
         this.port = port;
-        this.conn = connect();
+        connect();
     }
 
-    public Connection connect(String ip, String port) {
+    public void connect() {
         // connURL : 서버 접속시 필요한 ip주소, db 이름, 사용자 이름, 비밀번호
-        String ConnURL = "jdbc:sqlserver://" + ip + ":" + port + ";" +
-                "databaseName=" + db + ";";
+        String ConnURL = "jdbc:sqlserver://" + this.ip + ":" + this.port + ";" +
+                "databaseName=" + this.db + ";";
         try {
             Class.forName(classs);
             DriverManager.setLoginTimeout(1);
             // 연결을 한다
-            conn = DriverManager.getConnection(ConnURL, username, password);
+            this.conn = DriverManager.getConnection(ConnURL, this.username, this.password);
             System.out.println("연결 성공!");
         } catch (SQLException sqle) {
             System.out.println("SQLException : " + sqle);
@@ -34,7 +34,6 @@ public class SQLHandler {
         catch (Exception e) {
             System.out.println("MSSQLhandler % connect " + e.getMessage() + " Exception");
         }
-        return conn;
     }
 
     //cruid
@@ -44,10 +43,10 @@ public class SQLHandler {
     // insert
     // delete
 
-    public void drop(Connection conn, String tablename) {
+    public void drop(String tablename) {
         String query = "drop table " + tablename;
         try {
-            Statement statement = conn.createStatement();
+            Statement statement = this.conn.createStatement();
             statement.execute(query);
             System.out.println("테이블 삭제 성공 : " + tablename);
         }
@@ -56,28 +55,29 @@ public class SQLHandler {
         }
     }
 
-    public void read(Connection conn, String tablename, String where) {
+    public String[] read(String tablename, String where) {
         String query = "select * from " + tablename + where;
         ResultSet rs;
         try {
-            Statement statement = conn.createStatement();
+            Statement statement = this.conn.createStatement();
             rs = statement.executeQuery(query);
+            String result[] = new String[2];
             while (rs.next()) {
-                System.out.print(rs.getString(1) + " ");
-                System.out.print(rs.getInt(2) + " ");
-                System.out.print(rs.getInt(3) + " ");
-                System.out.println(rs.getString(4) + " ");
+                result[0] = rs.getString(1);
+                result[1] = rs.getString(2);
             }
+            return result;
         }
         catch (SQLException sqle) {
             System.out.println(sqle);
         }
+        return null;
     }
 
-    public void update(Connection conn, String tablename, String column, String value, String where) {
+    public void update(String tablename, String column, String value, String where) {
         String query = "update " + tablename + " set " + column + " = " + value + where;
         try {
-            Statement statement = conn.createStatement();
+            Statement statement = this.conn.createStatement();
             statement.execute(query);
             System.out.println("테이블 업데이트 성공 : " + tablename);
         }
@@ -86,10 +86,10 @@ public class SQLHandler {
         }
     }
 
-    public void insert(Connection conn, String tablename, String values) {
+    public void insert(String tablename, String values) {
         String query = "insert into " + tablename + " values (" + values + ")";
         try {
-            Statement statement = conn.createStatement();
+            Statement statement = this.conn.createStatement();
             statement.execute(query);
             System.out.println("테이블 값 추가 성공 : " + tablename);
         }
@@ -98,7 +98,7 @@ public class SQLHandler {
         }
     }
 
-    public void create(Connection conn, String tablename, String[] cnames, String[] dtypes, String[] consts) {
+    public void create(String tablename, String[] cnames, String[] dtypes, String[] consts) {
         String query = "";
         for(int i=0; i<cnames.length; i++) {
             if(i == 0) {
@@ -115,7 +115,7 @@ public class SQLHandler {
         System.out.println(query);
 
         try {
-            Statement statement = conn.createStatement();
+            Statement statement = this.conn.createStatement();
             statement.execute(query);
             System.out.println("테이블 생성 성공 : " + tablename);
         }
